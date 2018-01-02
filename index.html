@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>简历生成器</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal-default-theme.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/remodal/1.1.0/remodal.min.js"></script>
+    <script src="static/js/script.js"></script>
+</head>
+
+<body style="padding-right: 0px;">
+    <div class="container" id="cv">
+        <div class="side">
+            <div class="me">
+                <div class="portrait" style="background-image: url(&quot;data:image/jpeg;base64,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&quot;);"></div>
+
+                <h1 id="username" contenteditable="true">Chunhsin</h1>
+                <h4 id="persona-tag" contenteditable="true">寫作/攝影</h4>
+            </div>
+            <div class="profile info-unit">
+                <h2 class="info-header"><i class="iconfont icon-person"></i> <span class="info-title" contenteditable="true">Info</span><span class="item-add" style="visibility: hidden;"><i class="iconfont icon-playlistadd"></i></span><span class="unit-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></h2>
+                <hr>
+                <ul class="info-list">
+                    <li>
+                        <label class="left-label" contenteditable="true">姓名</label><span class="label-value" contenteditable="true">楊淳欣</span><span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <label class="left-label" contenteditable="true">學歷</label><span class="label-value" contenteditable="true">碩士</span><span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <label class="left-label" contenteditable="true">畢業學校</label><span class="label-value" contenteditable="true">國立台灣大學</span><span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <label class="left-label" contenteditable="true">畢業年份</label><span class="label-value" contenteditable="true">2017</span><span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                </ul>
+            </div>
+            <div class="contact info-unit">
+                <h2 class="info-header"><i class="iconfont icon-call"></i> <span class="info-title" contenteditable="true">Contact</span><span class="item-add" style="visibility: hidden;"><i class="iconfont icon-playlistadd"></i></span><span class="unit-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></h2>
+                <hr>
+                <ul class="info-list">
+                    <li>
+                        <label class="left-label" contenteditable="true">Cellphone</label><span class="label-value" contenteditable="true">0911093438</span><span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <label class="left-label" contenteditable="true">E-mail</label><span class="label-value" contenteditable="true">hsin6230@hotmail.com</span><span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+
+                    <li>
+                        <label class="left-label" contenteditable="true">Github</label><span class="label-value" contenteditable="true">github.com/chsiny23</span><span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                </ul>
+            </div>
+            <div class="skill info-unit">
+                <h2 class="info-header"><i class="iconfont icon-star"></i> <span class="info-title" contenteditable="true">Skills</span><span class="item-add" style="visibility: hidden;"><i class="iconfont icon-playlistadd"></i></span><span class="unit-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></h2>
+                <hr>
+                <ul class="progress-list">
+                    <li>
+                        <label class="left-label" contenteditable="true">Python</label>
+                        <progress value="80" max="100"></progress>
+                    <span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <label class="left-label" contenteditable="true">html/css</label>
+                        <progress value="70" max="100"></progress>
+                    <span class="item-remove"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <label class="left-label" contenteditable="true">Javascript</label>
+                        <progress value="60" max="100"></progress>
+                    <span class="item-remove"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <label class="left-label" contenteditable="true">机器学习</label>
+                        <progress value="60" max="100"></progress>
+                    <span class="item-remove"><i class="iconfont icon-delete"></i></span></li>
+                </ul>
+            </div>
+            <div class="stack info-unit">
+                <h2 class="info-header"><i class="iconfont icon-build"></i> <span class="info-title" contenteditable="true">技术栈</span><span class="item-add"><i class="iconfont icon-playlistadd"></i></span><span class="unit-remove"><i class="iconfont icon-delete"></i></span></h2>
+                <hr>
+                <ul class="stack-list">
+                    <li>
+                        <label class="left-label" contenteditable="true">前端</label><span class="label-value" contenteditable="true">jQuery、Angular.js、React.js</span><span class="item-remove"><i class="iconfont icon-delete"></i></span></li>
+
+                    <li>
+                        <label class="left-label" contenteditable="true">后端</label><span class="label-value" contenteditable="true">Flask、Django、Twisted、Node.js、MongoDB、MySQL、Redis</span><span class="item-remove"><i class="iconfont icon-delete"></i></span></li>
+
+                    <li>
+                        <label class="left-label" contenteditable="true">其它</label><span class="label-value" contenteditable="true">我全都是瞎写的。</span><span class="item-remove"><i class="iconfont icon-delete"></i></span></li>
+
+                </ul>
+            </div>
+
+            <div class="code info-unit">
+                <h2 class="info-header"><i class="iconfont icon-weixin"></i> <span class="info-title" contenteditable="true">个人微信</span><span class="unit-remove"><i class="iconfont icon-delete"></i></span></h2>
+                <hr>
+                <div class="weixin">
+                    <img src="static/image/weixin.png" alt="">
+
+                </div>
+            </div>
+
+        </div>
+        <div class="main">
+            <div class="education info-unit right-list">
+                <h2 class="info-header"><i class="iconfont icon-education"></i> <span class="info-title" contenteditable="true">教育经历</span><span class="item-add" style="visibility: hidden;"><i class="iconfont icon-playlistadd"></i></span><span class="unit-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></h2>
+                <hr>
+                <ul class="experience-list">
+                    <li>
+                        <h3 contenteditable="true">北京邮电大学 - 网络工程专业（本科）2012-2017</h3>
+                        <p contenteditable="true">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    <span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                </ul>
+            </div>
+            <div class="work info-unit right-list">
+                <h2 class="info-header"><i class="iconfont icon-work"></i> <span class="info-title" contenteditable="true">工作经历</span><span class="item-add"><i class="iconfont icon-playlistadd"></i></span><span class="unit-remove"><i class="iconfont icon-delete"></i></span></h2>
+                <hr>
+                <ul class="experience-list">
+                    <li>
+                        <h3 contenteditable="true">北京创客空间－实习生（实习）</h3>
+                        <p contenteditable="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    <span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <h3 contenteditable="true">实验楼－课程内容（实习）</h3>
+                        <p contenteditable="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    <span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                </ul>
+            </div>
+            <div class="project info-unit right-list">
+                <h2 class="info-header"><i class="iconfont icon-project"></i> <span class="info-title" contenteditable="true">个人项目</span><span class="item-add" style="visibility: hidden;"><i class="iconfont icon-playlistadd"></i></span><span class="unit-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></h2>
+                <hr>
+                <ul class="experience-list">
+                    <li>
+                        <h3 contenteditable="true">基于 Qt 5 的文本编辑器</h3>
+                        <p contenteditable="true">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam。Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            <br>
+                        </p>
+                    <span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <h3 contenteditable="true">基于 Flask 的主机监视系统</h3>
+                        <p contenteditable="true">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    <span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <h3 contenteditable="true">基于 Live2D 与 clmtrackr 的山寨 Facerig</h3>
+                        <p contenteditable="true">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    <span class="item-remove" style="visibility: hidden;"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <h3 contenteditable="true">如果项目太少，可以在实验楼上找项目做啊:D</h3>
+                        <p contenteditable="true">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        </p>
+                    <span class="item-remove"><i class="iconfont icon-delete"></i></span></li>
+                </ul>
+            </div>
+            <div class="trophy info-unit">
+                <h2 class="info-header"><i class="iconfont icon-trophy"></i> <span class="info-title" contenteditable="true">奖项与证书</span><span class="item-add"><i class="iconfont icon-playlistadd"></i></span><span class="unit-remove"><i class="iconfont icon-delete"></i></span></h2>
+                <hr>
+                <ul class="experience-list">
+                    <li>
+                        <h3 contenteditable="true">小学生作文二等奖</h3>
+                        <p contenteditable="true">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam。
+                        </p>
+                    <span class="item-remove"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <h3 contenteditable="true">曾获统一冰红茶“再来一瓶”奖</h3>
+                        <p contenteditable="true">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam。
+                        </p>
+                    <span class="item-remove"><i class="iconfont icon-delete"></i></span></li>
+                    <li>
+                        <h3 contenteditable="true">这一行也是为了凑版面</h3>
+                        <p contenteditable="true">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam。
+                        </p>
+                    <span class="item-remove"><i class="iconfont icon-delete"></i></span></li>
+            </ul></div>
+            <div class="aboutme info-unit right-paragraph">
+                <h2 class="info-header"><i class="iconfont icon-flower"></i> <span class="info-title" contenteditable="true">自我评价</span><span class="unit-remove"><i class="iconfont icon-delete"></i></span></h2>
+                <hr>
+                <p contenteditable="true">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+<div class="remodal-overlay remodal-is-closed" style="display: none;"></div><div class="remodal-wrapper remodal-is-closed" style="display: none;"><div class="remodal remodal-img remodal-is-initialized remodal-is-closed" data-remodal-id="portrait-modal" tabindex="-1">
+                    <h3 contenteditable="true">请输入图片URL地址：</h3>
+                    <br>
+                    <input type="text" id="avatar-url">
+                    <button data-remodal-action="confirm" class="remodal-confirm">确定</button>
+                </div></div><div class="remodal-wrapper remodal-is-closed" style="display: none;"><div class="remodal remodal-img remodal-is-initialized remodal-is-closed" data-remodal-id="weixin-modal" tabindex="-1">
+                <h3 contenteditable="true">请输入图片URL地址：</h3>
+                <br>
+                <input type="text" id="weixin-url">
+                <button data-remodal-action="confirm" class="remodal-confirm">确定</button>
+            </div></div></body>
+
+</html>
